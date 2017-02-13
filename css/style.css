@@ -86,18 +86,6 @@ h1 {
 .nameinput:focus ~ .bar:after {
   width: 50%; }
 
-@font-face {
-  font-family: "leafy";
-  src: url("../font/leafy.woff") format("woff"); }
-body {
-  font-family: "leafy";
-  background-image: url("../resources/background.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden; }
-
 #main-page {
   display: none; }
 
@@ -111,6 +99,29 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-top: 3%;
+  font-size: 50px;
   width: 700px; }
+  #content-after input[type=text] {
+    font-family: "leafy";
+    font-size: 40pt;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    padding: 0px; }
+
+@font-face {
+  font-family: "leafy";
+  src: url("../font/leafy.woff") format("woff"); }
+body {
+  font-family: "leafy";
+  background-image: url("../resources/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
 
 /*# sourceMappingURL=style.css.map */

@@ -23,5 +23,8 @@ document.getElementById('name-input-form').onsubmit = function(e) {
     //document.getElementById('content-after').className = "r";
     //document.getElementById('footer-after').className = "r";
   }, 400);
+};
 
+document.getElementById('note-input-form').onsubmit = function(e) {
+  e.preventDefault();
 };
