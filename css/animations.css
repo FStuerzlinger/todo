@@ -1,0 +1,25 @@
+@keyframes moveInR {
+  0% {
+    transform: translateX(100vw); }
+  100% {
+    transform: translateX(0%); } }
+@keyframes moveInL {
+  0% {
+    transform: translateX(0%); }
+  100% {
+    transform: translateX(-100vw); } }
+.r {
+  animation-name: moveInR;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+  animation-timing-function: ease-in-out; }
+
+.l {
+  animation-name: moveInL;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out; }
+
+/*# sourceMappingURL=animations.css.map */

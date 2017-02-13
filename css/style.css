@@ -1,0 +1,116 @@
+@keyframes moveInR {
+  0% {
+    transform: translateX(100vw); }
+  100% {
+    transform: translateX(0%); } }
+@keyframes moveInL {
+  0% {
+    transform: translateX(0%); }
+  100% {
+    transform: translateX(-100vw); } }
+.r {
+  animation-name: moveInR;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+  animation-timing-function: ease-in-out; }
+
+.l {
+  animation-name: moveInL;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out; }
+
+h1 {
+  font-size: 60pt;
+  margin-bottom: 0px;
+  text-align: center; }
+
+.header {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  width: 700px; }
+
+.namebox {
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px; }
+  .namebox input[type=text] {
+    font-family: "leafy";
+    font-size: 40pt;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    padding: 0px; }
+
+.footertext {
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px; }
+  .footertext h2 {
+    margin-bottom: 0px;
+    text-align: center; }
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%; }
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: black;
+  transition: 0.2s ease all; }
+
+.bar:before {
+  left: 50%; }
+
+.bar:after {
+  right: 50%; }
+
+.nameinput:focus {
+  border-color: transparent; }
+
+.nameinput:focus ~ .bar:before,
+.nameinput:focus ~ .bar:after {
+  width: 50%; }
+
+@font-face {
+  font-family: "leafy";
+  src: url("../font/leafy.woff") format("woff"); }
+body {
+  font-family: "leafy";
+  background-image: url("../resources/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+#main-page {
+  display: none; }
+
+#header-after {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3%;
+  width: 700px; }
+
+#content-after {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3%;
+  width: 700px; }
+
+/*# sourceMappingURL=style.css.map */
