@@ -26,5 +26,18 @@ document.getElementById('name-input-form').onsubmit = function(e) {
 };
 
 document.getElementById('note-input-form').onsubmit = function(e) {
+  // Cancle the form submit
   e.preventDefault();
+
+  // Array to save the notes
+  var notes = [];
+  notes.push(document.getElementById('input-note').value);
+  for (var i = 0; i < notes.length; i++) {
+    var node = document.createElement("li");
+    var textnode = document.createTextNode(notes[i]);
+    node.appendChild(textnode);
+    document.getElementById("notes-list").appendChild(node);
+  }
+  document.getElementById('input-note').value = "";
+
 };
