@@ -112,6 +112,30 @@ h1 {
     outline: none;
     padding: 0px; }
 
+.notes {
+  padding-top: 3%; }
+
+.row {
+  width: 100%; }
+
+.control-block {
+  width: 20%;
+  display: inline-block; }
+
+button {
+  border: none;
+  font-family: "leafy";
+  font-size: 40px;
+  background: transparent;
+  outline: none; }
+
+.note-element {
+  padding-top: 1%;
+  font-size: 40px;
+  width: 80%;
+  outline: none;
+  display: inline-block; }
+
 @font-face {
   font-family: "leafy";
   src: url("../font/leafy.woff") format("woff"); }

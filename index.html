@@ -6,39 +6,37 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-      <div id="welcome-page" class="r">
-        <div id="header-before" class="header">
-            <h1>Please enter your name !</h1>
+        <div id="welcome-page" class="r">
+            <div id="header-before" class="header">
+                <h1>Please enter your name !</h1>
+            </div>
+            <div id="namebox-before" class="namebox">
+                <form id="name-input-form">
+                    <input id="input-name" class="nameinput" type="text"/>
+                    <span class="bar"></span>
+                </form>
+            </div>
+            <div id="footertext-before" class="footertext">
+                <h2>A person has no name!</h2>
+            </div>
         </div>
-        <div id="namebox-before" class="namebox">
-            <form id="name-input-form">
-                <input id="input-name" class="nameinput" type="text"/>
-                <span class="bar"></span>
-            </form>
-        </div>
-        <div id="footertext-before" class="footertext">
-            <h2>A person has no name!</h2>
-        </div>
-      </div>
 
-      <div id="main-page">
-        <div id="header-after">
-          <h1 id="header-text">No One's Notes</h1>
-        </div>
-        <div id="content-after">
-          <form id="note-input-form" >
-            <input id="input-note" class="nameinput" type="text">
-            <span class="bar"></span>
-          </form>
-          <div class="notes">
-            <ul id="notes-list">
-              
-            </ul>
-          </div>
+        <div id="main-page">
+            <div id="header-after">
+                <h1 id="header-text">No One's Notes</h1>
+            </div>
+            <div id="content-after">
+                <form id="note-input-form">
+                    <input id="input-note" class="nameinput" type="text">
+                    <span class="bar"></span>
+                </form>
+                <div id="notes" class="notes">
 
+                </div>
+            </div>
         </div>
-      </div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        </script>
     </body>
 </html>
