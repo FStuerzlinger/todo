@@ -17,6 +17,7 @@ document.getElementById('name-input-form').onsubmit = function(e) {
     // Animations not working yet
     document.getElementById('main-page').className = "r";
     document.getElementById('main-page').style.display = 'initial';
+    refreshView();
   }, 400);
 };
 
@@ -24,17 +25,46 @@ document.getElementById('name-input-form').onsubmit = function(e) {
 document.getElementById('note-input-form').onsubmit = function(e) {
   // Cancle the form submit
   e.preventDefault();
-
-  // Array to save the notes
   var notes = [];
+  if (localStorage.getItem("notes") === null) {
+    // localStorage only supports strings
+    notes[0] = "Type to create a new note :) ";
+  } else {
+    notes = JSON.parse(localStorage.getItem("notes"));
+  }
   notes.push(document.getElementById('input-note').value);
-  for (var i = 0; i < notes.length; i++) {
+  localStorage.setItem("notes", JSON.stringify(notes));
 
-    // Create the row
+  refreshView();
+  document.getElementById('input-note').value = "";
+
+};
+
+function deleteNoteClick(id) {
+  var notes = [];
+  notes = JSON.parse(localStorage.getItem("notes"));
+  notes.splice(id, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  refreshView();
+}
+
+function getIdOfElement(element) {
+  var underscoreIndex = element.id.indexOf('_');
+  return element.id.substring(underscoreIndex + 1);
+}
+
+function refreshView() {
+  var notes = [];
+  notes = JSON.parse(localStorage.getItem("notes"));
+  document.getElementById('notes').innerHTML = "";
+  for (var i = 0; i < notes.length; i++) {
+    console.log(i);
     var row = document.createElement("div");
+    row.setAttribute("id", "row_" + i);
     row.className = "row";
     // div for the text content of the note
     var node = document.createElement("div");
+    node.setAttribute("id", "textnoteelement_" + i);
     node.className = "note-element";
     node.contentEditable = true;
     node.innerHTML = notes[i];
@@ -44,9 +74,13 @@ document.getElementById('note-input-form').onsubmit = function(e) {
     // add the button to the control block
     var button = document.createElement("button");
     var text = document.createTextNode("X");
+    button.setAttribute("id", "deletebutton_" + i);
+    button.onclick = function temp() {
+      deleteNoteClick(getIdOfElement(this));
+    }
+
     button.appendChild(text);
     control.appendChild(button);
-
     // add the divs to the row
     row.appendChild(node);
     row.appendChild(control);
@@ -54,6 +88,4 @@ document.getElementById('note-input-form').onsubmit = function(e) {
     //node.appendChild(textnode);
     document.getElementById("notes").appendChild(row);
   }
-  document.getElementById('input-note').value = "";
-  // document.getElementById('editable').textContent.trim()
-};
+}
