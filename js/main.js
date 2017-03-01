@@ -1,5 +1,19 @@
-document.getElementById('name-input-form').onsubmit = function(e) {
+window.onload = function() {
+  if (localStorage.name == null) {
 
+  } else {
+    document.getElementById('header-text').innerHTML = localStorage.name +
+      "'s notes";
+    document.getElementById('welcome-page').style.display = 'none';
+    // Animations not working yet
+    document.getElementById('main-page').className = "r";
+    document.getElementById('main-page').style.display = 'initial';
+    refreshView();
+  }
+}
+
+// Check if name is already defined
+document.getElementById('name-input-form').onsubmit = function(e) {
   // Cancel the form submit
   e.preventDefault();
 
@@ -17,6 +31,11 @@ document.getElementById('name-input-form').onsubmit = function(e) {
     // Animations not working yet
     document.getElementById('main-page').className = "r";
     document.getElementById('main-page').style.display = 'initial';
+    var notes = [];
+    //localStorage only supports strings
+    if (localStorage.getItem("notes") !== null) {
+      notes = JSON.parse(localStorage.getItem("notes"));
+    }
     refreshView();
   }, 400);
 };
@@ -26,10 +45,8 @@ document.getElementById('note-input-form').onsubmit = function(e) {
   // Cancle the form submit
   e.preventDefault();
   var notes = [];
-  if (localStorage.getItem("notes") === null) {
-    // localStorage only supports strings
-    notes[0] = "Type to create a new note :) ";
-  } else {
+  //localStorage only supports stings
+  if (localStorage.getItem("notes") !== null) {
     notes = JSON.parse(localStorage.getItem("notes"));
   }
   notes.push(document.getElementById('input-note').value);
@@ -51,6 +68,13 @@ function deleteNoteClick(id) {
 function getIdOfElement(element) {
   var underscoreIndex = element.id.indexOf('_');
   return element.id.substring(underscoreIndex + 1);
+}
+
+// Replace the div with an input type text and an form
+function onClickNoteElement() {
+  // get the Id of the element
+  // Create form and input
+  // catch submit of form
 }
 
 function refreshView() {
