@@ -1,5 +1,5 @@
 window.onload = function() {
-  if (localStorage.name == null) {
+  if ((localStorage.name === undefined) || (localStorage.name === null)) {
 
   } else {
     document.getElementById('header-text').innerHTML = localStorage.name +

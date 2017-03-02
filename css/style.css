@@ -138,7 +138,7 @@ button {
 
 @font-face {
   font-family: "leafy";
-  src: url("../font/fibre-font.woff") format("woff"); }
+  src: url("../font/leafy.woff") format("woff"); }
 body {
   font-family: "leafy";
   background-image: url("../resources/background.jpeg");
